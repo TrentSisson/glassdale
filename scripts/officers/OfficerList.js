@@ -1,23 +1,23 @@
-import { getOfficers, useOfficers } from "./CriminalsProvider.js"
-import { Criminals } from "./Criminal.js"
+import { getOfficers, useOfficers } from "./OfficerProvider.js"
+import { officer } from "./Officer.js"
 
-const OfficersContainer = document.querySelector(".criminalsContainer")
+const officerContainer = document.querySelector(".officersContainer")
 
-export const CriminalList = () => {
+export const officerList = () => {
 
-    getCriminals()
+    getOfficers()
         .then(() => {
-            const criminalArray = useCriminals()
+            const officerArray = useOfficers()
 
-            let criminalsHTMLRepresentation = ""
-            for (const criminal of criminalArray) 
+            let officerHTMLRepresentation = ""
+            for (const officers of officerArray) 
                 
-                criminalsHTMLRepresentation += Criminals(criminal)
+                officerHTMLRepresentation += officer(officers)
                 
-                criminalContainer.innerHTML = `
-                    <h3>Glassdale Criminals</h3>
-                    <section class ="criminalList">
-                        ${criminalsHTMLRepresentation}
+                officerContainer.innerHTML = `
+                    <h3>Glassdale PD'S FINEST</h3>
+                    <section class ="officerList">
+                        ${officerHTMLRepresentation}
                     </sections>
                 `
         

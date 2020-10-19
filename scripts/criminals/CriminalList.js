@@ -10,7 +10,7 @@ export const CriminalList = () => {
             const criminalArray = useCriminals()
 
             let criminalsHTMLRepresentation = ""
-            for (const criminal of criminalArray) 
+            for (const criminal of criminalArray) {
                 
                 criminalsHTMLRepresentation += Criminals(criminal)
                 
@@ -20,6 +20,6 @@ export const CriminalList = () => {
                         ${criminalsHTMLRepresentation}
                     </sections>
                 `
-        
+            }
     })
 }
