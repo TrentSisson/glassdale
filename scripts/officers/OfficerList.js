@@ -10,7 +10,7 @@ export const officerList = () => {
             const officerArray = useOfficers()
 
             let officerHTMLRepresentation = ""
-            for (const officers of officerArray) 
+            for (const officers of officerArray) {
                 
                 officerHTMLRepresentation += officer(officers)
                 
@@ -20,6 +20,6 @@ export const officerList = () => {
                         ${officerHTMLRepresentation}
                     </sections>
                 `
-        
+            }  
     })
 }

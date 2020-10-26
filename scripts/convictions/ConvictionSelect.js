@@ -1,15 +1,11 @@
-/*
- *   ConvictionSelect component that renders a select HTML element
- *   which lists all convictions in the Glassdale PD API
- */
 import { getConvictions, useConvictions } from "./ConvictionProvider.js"
 
-// Get a reference to the DOM element where the <select> will be rendered
+
 const contentTarget = document.querySelector(".filters__crime")
 const eventHub = document.querySelector(".container")
 
 export const ConvictionSelect = () => {
-    // Get all convictions from application state
+    
     getConvictions()
         .then(() => {
     const convictions = useConvictions()
@@ -18,11 +14,7 @@ export const ConvictionSelect = () => {
 }
 
 const render = convictionsCollection => {
-    /*
-        Use interpolation here to invoke the map() method on
-        the convictionsCollection to generate the option elements.
-        Look back at the example provided above.
-    */
+   
     contentTarget.innerHTML = `
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
@@ -39,14 +31,15 @@ const render = convictionsCollection => {
     `
 }
 
-contentTarget.addEventListener("change", (changeEvent) => {
-    if(changeEvent.target.id === "crimeSelect "){
-const customEvent = newEvent ("crimeSelected", {
-    detail: {
-        crimeThaWasChosen: parseInt(changeEvent.target.value)
+eventHub.addEventListener("change", (changeEvent) => {
+    console.log(changeEvent,'change')
+    if(changeEvent.target.id === "crimeSelect"){
+    const customEvent = new CustomEvent("crimeSelected", {
+        detail: {
+            crimeThatWasChosen: parseInt(changeEvent.target.value)
 
     }
     })
-    eventHub.dispatchEvent(customEVent)
+    eventHub.dispatchEvent(customEvent)
 }   
 })

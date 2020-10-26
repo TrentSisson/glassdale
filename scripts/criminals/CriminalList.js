@@ -20,34 +20,48 @@ export const CriminalList = () => {
 
 eventHub.addEventListener("crimeSelected", event => {
     if (event.detail.crimeThatWasChosen !== 0){
-
         
+
+        const criminalsArray = useCriminals()
 
         const convictionsArray = useConvictions()
 
         const convictionThatWasChosen = convictionsArray.find(convictionObj =>{
-            return criminalObj.conviction === convictionThatWasChosen.name
+            console.log(convictionObj)
+            return convictionObj.id === event.detail.crimeThatWasChosen
 
         })
-        render(filteredCriminalArray)
+        const filteredCriminalsArray = criminalsArray.filter(criminalObj => {
+            return criminalObj.conviction === convictionThatWasChosen.name
+        })
+
+        render(filteredCriminalsArray)
+    } else{
+        CriminalList()
     }
 })
 
+
+
 eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
-    const selectedOfficerName = officerSelectedEventObj.detail.sleectedOfficerName
+    const selectedOfficerName = officerSelectedEventObj.detail.officerName
 
     const criminalsArray = useCriminals()
 
-    constfilteredArrayCriminals = criminalsArray.filter(
+    const filteredArrayCriminals = criminalsArray.filter(
         (criminalObj) => {
             if (criminalObj.arrestingOfficer === selectedOfficerName) {
                 return true
-            }
-            return false
+            } 
+         return false
+           
             })
         
-        
+            render(filteredArrayCriminals)
+            
         })
+
+        
 
     const render = (criminalsArray) => {
         let criminalsHTMLRepresentation = ""
@@ -62,5 +76,7 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
             </section> 
             `
         }
+    
     }
+
    
