@@ -1,6 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalsProvider.js"
 import { Criminals } from "./Criminal.js"
 import {useConvictions} from "../convictions/ConvictionProvider.js"
+import { officerList } from "../officers/OfficerList.js"
 
 const eventHub = document.querySelector(".container")
 
@@ -52,14 +53,18 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
         (criminalObj) => {
             if (criminalObj.arrestingOfficer === selectedOfficerName) {
                 return true
-            } 
-         return false
+            }
+
+        {
+              return false
+              
+        }
            
             })
         
-            render(filteredArrayCriminals)
+                render(filteredArrayCriminals)
             
-        })
+            })
 
         
 
@@ -70,7 +75,7 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
             criminalsHTMLRepresentation += Criminals(criminal)
 
             criminalsContainer.innerHTML =`
-            <h3>Glassdale's BadBoys!</h3>
+            
             <section class="criminalList">
             ${criminalsHTMLRepresentation}
             </section> 
