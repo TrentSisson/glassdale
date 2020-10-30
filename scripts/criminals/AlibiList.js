@@ -1,4 +1,4 @@
-import { useCriminals } from "./CriminalProvider.js"
+import { useCriminals } from "./CriminalsProvider.js"
 
 const eventHub = document.querySelector(".container")
 
@@ -25,7 +25,7 @@ const AlibiList = (criminalObj) => {
 
 // lets make a render method for adding alibis
 const render = (criminalObj) => {
-    const contentTarget = document.querySelector(`#criminal-${criminalObj.id}`)
+    const contentTarget = document.querySelector(`#criminal--${criminalObj.id}`)
 
     contentTarget.innerHTML += `
     <div class="alibi__list">
