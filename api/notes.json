@@ -31,6 +31,14 @@
       "suspect": "Madelyn Lesback",
       "note": "I cant believe she stole a car and got 16 years!",
       "id": 4
+    },
+    {
+      "dateOfInterview": "2020-11-02",
+      "timestamp": 1604794753107,
+      "author": "billy",
+      "suspect": "bobby",
+      "note": "billybobby",
+      "id": 5
     }
   ]
 }

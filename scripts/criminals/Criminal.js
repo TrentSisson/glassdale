@@ -1,7 +1,7 @@
 const eventHub = document.querySelector(".container")
 export const Criminals = (criminalObj) => {
     return`
-    <div class="criminal">
+    <div id="criminal-${criminalObj.id}" class ="criminal">
         <h1>CRIMINAL</h1>
         <h5>${criminalObj.name}</h5>
         <p>Age: ${criminalObj.age}</p>
