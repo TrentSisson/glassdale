@@ -39,3 +39,28 @@ body{
   background-color: white;
 
 }
+
+.filters{
+  display: flex;
+}
+
+.investigation{
+  display: flex;
+}
+
+.criminalsContainer{
+  flex: 3;
+}
+
+.notesContainer{
+  flex: 1;
+}
+
+.note{
+  border: 1px solid red;
+  margin: 1rem;
+  padding: 0.5rem;
+ background-color: white;
+ flex-basis: 25%;
+}
+
