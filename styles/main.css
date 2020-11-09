@@ -63,4 +63,7 @@ body{
  background-color: white;
  flex-basis: 25%;
 }
+.noteH1 {
+  color:red;
+}
 
