@@ -1,5 +1,5 @@
 import { saveNote } from "./notesDataProvider.js"
-
+import {getCriminals, useCriminals} from "../criminals/CriminalsProvider.js"
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
@@ -35,5 +35,9 @@ eventHub.addEventListener("click", clickEvent => {
 
 
 export const NoteForm = () => {
-    render()
+    getCriminals()
+    .then(() => {
+        const listOfCriminals = useCriminals()
+        render (listOfCriminals)
+    })
 }
