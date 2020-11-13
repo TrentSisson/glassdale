@@ -1,5 +1,5 @@
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
-import {CriminalList} from "./criminals/CriminalList.js"
+import {criminalList} from "./criminals/CriminalList.js"
 import { officerList } from "./officers/OfficerList.js"
 import { OfficerSelect } from "./officers/OfficerSelect.js"
 import { Criminals } from "./criminals/Criminal.js"
@@ -12,7 +12,7 @@ import "./witnesses/witnessStatementList.js"
 
 
 ConvictionSelect()
-CriminalList()
+criminalList()
 officerList()
 OfficerSelect()
 NoteForm()
